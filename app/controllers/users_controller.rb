@@ -3,20 +3,22 @@ class UsersController < ApplicationController
   end
 
   def index
-    @user = current_user
+
   end
 
   def create
     @user = User.new(user_params)
     @user.password = user_params[:password]
-    @user.save!
+    @user.save
+    session[:user_id] = @user.id
+
     redirect_to root_path
   end
 
   def login
     @user = User.find_by_email(params[:email])
     if @user.password == params[:password]
-      give_token
+      session[:user_id] = @user.id
     else
       redirect_to home_url
     end
@@ -29,6 +31,11 @@ class UsersController < ApplicationController
     @user.save!
     Mailer.create_and_deliver_password_change(@user, random_password)
   end
+
+  def logout
+    session[:user_id] = nil
+  end
+
 
   private
   def user_params
