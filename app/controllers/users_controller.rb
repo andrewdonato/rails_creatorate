@@ -2,10 +2,15 @@ class UsersController < ApplicationController
   def new
   end
 
+  def index
+    @user = current_user
+  end
+
   def create
     @user = User.new(user_params)
     @user.password = user_params[:password]
     @user.save!
+    redirect_to root_path
   end
 
   def login
@@ -29,5 +34,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password)
   end
+
+
 
 end
