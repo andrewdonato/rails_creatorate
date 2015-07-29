@@ -1,0 +1,26 @@
+<div class="pos-f">
+  <a href="/">Home</a>
+  <% if !current_user %>
+    <div class="float-tastic">
+      <div class="float-left">
+        <%= render "users/login" %>
+      </div>
+      <div class="float-right">
+        <%= render "users/signup" %>
+      </div>
+    </div>
+  <% else %>
+    <div class="float-tastic">
+      <div class="float-left">
+        <a href="/users/<%=current_user.id%>">
+          <p>user personal page</p>
+        </a>
+      </div>
+      <div class="float-right">
+        <a href="/signout">
+          <p>signout</p>
+        </a>
+      </div>
+    </div>
+  <% end %>
+</div>

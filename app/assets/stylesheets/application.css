@@ -13,3 +13,64 @@
  *= require_tree .
  *= require_self
  */
+
+
+/* box-sizing fix */
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+.input {
+  display: inline-block;
+}
+.float-left {
+  display: inline-block;
+  width: 50%;
+}
+
+.float-right {
+  display: inline-block;
+  width: 50%;
+}
+
+.float-tastic {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+/*
+* {
+    border-style: solid;
+    border-width: 1px;
+}
+*/
+.index {
+    border-style: solid;
+    border-width: 1px;
+}
+
+/*
+div  {
+  background-color: skyblue;
+}
+*/
+/*
+.pos-f {
+    position: fixed;
+}
+*/

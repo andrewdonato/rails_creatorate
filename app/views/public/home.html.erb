@@ -1,0 +1,28 @@
+
+
+<% if current_user %>
+  <div id='<%= current_user.id %>'>
+    <h3>Imagine something beautiful</h3>
+    <h2 id='current_user'> Hello <%= current_user.name.capitalize %></h2>
+  </div>
+
+  <div class="float-tastic">
+    <div class='float-left'>
+      <%= erb :"project_users/_collaborate_button" %>
+      <div class="hidden_skill_form float-right hidden">
+        <%= erb :"user/_user_skill_edit" %>
+      </div>
+    </div>
+    <div class='float-right'>
+      <%= erb :"project/_create_project_button" %>
+      <div class="hidden_project_form float-left hidden">
+        <%= erb :"project/_project_new" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+  <div class="project_index">
+    <%= render "projects/project_index" %>
+  </div>
+
