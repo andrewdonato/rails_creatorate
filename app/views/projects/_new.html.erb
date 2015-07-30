@@ -1,0 +1,12 @@
+<div>
+  <h3>Create a new project</h3>
+  <%= form_for :project, url: user_projects_path(@user) do |form| %>
+    <%= form.text_field :name %>
+    <%= form.text_field :timeframe %>
+    <%= form.text_field :finances %>
+    <%= form.text_field :description %>
+    <%= form.text_field :needs %>
+
+    <%= form.submit "Create Project" %>
+  <% end %>
+</div>

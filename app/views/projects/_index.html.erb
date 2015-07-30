@@ -1,0 +1,10 @@
+<div class='project_index index'>
+  <h1>Existing Projects</h1>
+  <% Project.all.each do |project| %>
+    <div>
+      <a href="users/<%= project.creator_id %>/projects/<%= project.id %>" ><%= project.name %></a>
+    </div>
+  <% end %>
+</div>
+
+

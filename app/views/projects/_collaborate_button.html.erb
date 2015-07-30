@@ -1,0 +1,10 @@
+<% if current_user %>
+  <div>
+    <p></p>
+      <a href="/users/<%= @project.creator_id %>/projects/<%= @project.id %>/collaborate" class="project_collaborate_button"><button class='show'>
+        Collaborate
+      </button></a>
+  </div>
+<% end %>
+
+

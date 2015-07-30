@@ -1,5 +1,3 @@
-
-
 <% if current_user %>
   <div id='<%= current_user.id %>'>
     <h3>Imagine something beautiful</h3>
@@ -8,21 +6,21 @@
 
   <div class="float-tastic">
     <div class='float-left'>
-      <%= erb :"project_users/_collaborate_button" %>
+      <%= render "projects/collaborate_button" %>
       <div class="hidden_skill_form float-right hidden">
-        <%= erb :"user/_user_skill_edit" %>
+        <%= render "users/user_skill_edit" %>
       </div>
     </div>
     <div class='float-right'>
-      <%= erb :"project/_create_project_button" %>
+      <%= render "projects/create_project_button" %>
       <div class="hidden_project_form float-left hidden">
-        <%= erb :"project/_project_new" %>
+        <%= render "projects/new" %>
       </div>
     </div>
   </div>
 <% end %>
 
-  <div class="project_index">
-    <%= render "projects/project_index" %>
-  </div>
+<div class="project_index">
+  <%= render "projects/index" %>
+</div>
 

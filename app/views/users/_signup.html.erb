@@ -7,19 +7,12 @@
       <%end%>
     </div>
   <% end %>
-
-  <form method="post" action="/users">
-
-    <input class="input" type="text" name="name" placeholder="username">
-
-    <input class="input" type="text" name="email" placeholder="email">
-
-    <input type="password" name="password" placeholder="password">
-
-    <!-- <input type="password" name="verify_password" placeholder="verify password"> -->
-
-    <input type="submit" value="Signup">
-
-  </form>
+    <%= form_for :user, url: users_path do |form| %>
+    <%= form.text_field :name %>
+    <%= form.text_field :email %>
+    <%= form.password_field :password %>
+    <%= form.password_field :password_confirmation %>
+    <%= form.submit "Submit" %>
+  <% end %>
 
 </div>

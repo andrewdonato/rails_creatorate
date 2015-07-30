@@ -1,0 +1,22 @@
+<div dataProjectId='<%= @project.id %>' class='project_show'>
+  <%= render 'collaborate_button' %>
+  <div class='project_information'>
+    <h2> Project: <%= @project.name %> </h2>
+    <p> Creator: <%= @creator.name %> </p>
+    <p> Timeframe: <%= @project.timeframe %> </p>
+    <p> Finances: <%= @project.finances %> </p>
+    <p> Description: <%= @project.description %> </p>
+    <p> Creative needs: <%= @project.needs %> </p>
+  </div>
+
+  <div class='project_collaborators index'>
+    <h3>Current collaborators:</h3>
+    <div id="collaborators-list">
+      <% @project.users.each do |user| %>
+        <div>
+          <a href="/users/<%= user.id %>"><%= user.name %></a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
